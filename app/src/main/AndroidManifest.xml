@@ -1,8 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.1" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lestutosdeproc">
+    package="com.proc.lestutosdeproc"
+    android:versionCode="2">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_processus"
@@ -10,7 +17,16 @@
         android:roundIcon="@mipmap/ic_processus_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LesTutosdeProc">
-        <activity android:name=".MainActivity">
+
+        <receiver android:name=".BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="com.proc.lestutosdeproc.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:showOnLockScreen="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +35,8 @@
         </activity>
 
         <service
-            android:name=".ProcService"
-            android:enabled="true"
-            android:exported="false"
+            android:name="com.proc.lestutosdeproc.ProcService"
+            android:showOnLockScreen="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 </manifest>

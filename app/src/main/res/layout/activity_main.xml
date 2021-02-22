@@ -31,13 +31,13 @@
 
             <LinearLayout
                 android:id="@+id/discordwrapperinside"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
                 android:layout_weight="0"
-                android:gravity="right|bottom"
+                android:gravity="left|bottom"
                 android:orientation="vertical"
-                android:visibility="visible"
-                android:layout_marginBottom="20dp">
+                android:visibility="visible">
 
                 <ImageButton
                     android:id="@+id/discord"
@@ -45,19 +45,19 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:background="@null"
-                    android:scaleType="fitCenter"
+                    android:scaleType="fitEnd"
                     app:srcCompat="@drawable/discordicon" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/mailwrapperinside"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
                 android:layout_weight="0"
-                android:gravity="right|bottom"
+                android:gravity="left|bottom"
                 android:orientation="vertical"
-                android:visibility="visible"
-                android:layout_marginBottom="20dp">
+                android:visibility="visible">
 
                 <ImageButton
                     android:id="@+id/mail"
@@ -66,7 +66,8 @@
                     android:layout_height="fill_parent"
                     android:background="@null"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/mail" />
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/mailv2" />
             </LinearLayout>
 
         </LinearLayout>
